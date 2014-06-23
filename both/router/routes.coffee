@@ -16,3 +16,6 @@ Router.map ->
 
   @route 'squads.show',
     path: '/squads/:slug'
+
+  @route 'games.show',
+    path: '/games/:_id'

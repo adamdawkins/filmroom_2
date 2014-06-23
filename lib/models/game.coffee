@@ -6,10 +6,13 @@ class @Game extends Minimongoid
   ]
 
   defaults:
-    opponent: ''
-    score: 0
+    opponent_name: ''
+    squad_score: 0
     opponent_score: 0
 
 
   validate: ->
-    @error('opponent', 'Game opponent is required') unless @opponent
+    @error('opponent', 'Game opponent is required') unless @opponent_name
+
+  name: ->
+    "#{@squad_score}-#{@opponent_score} vs #{@opponent_name}"

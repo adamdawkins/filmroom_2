@@ -4,3 +4,16 @@ template(name="TournamentsShow")
   .list-group
     each games
       a.list-group-item(href="{{pathFor 'games.show'}}")= name
+    +AddGame
+
+
+template(name="AddGame")
+  .list-group-item
+    form.form-inline(role="form")
+      .form-group
+        label Wolves:
+        input#game_squad_score.form-control(type="number" value="0" style="width:80px; text-align:center;")
+      .form-group
+        input#game_opponent_name.form-control(type="text" placeholder="opponent")
+        input#game_opponent_score.form-control(type="number" value="0" style="width:80px; text-align:center;")
+      button.btn.btn-primary Add Game
