@@ -1,0 +1,6 @@
+template(name="TournamentsShow")
+  h1= name
+  h2 Games
+  .list-group
+    each games
+      a.list-group-item(href="{{pathFor 'games.show'}}")= name

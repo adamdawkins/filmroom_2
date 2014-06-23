@@ -1,0 +1,9 @@
+{
+  "packages": {
+    "iron-router": {},
+    "minimongoid": {},
+    "jade": {},
+    "bootswatch-darkly": {},
+    "iron-router-progress": {}
+  }
+}
