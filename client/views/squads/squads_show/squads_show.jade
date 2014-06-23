@@ -1,10 +1,16 @@
 template(name="SquadsShow")
   h1=name
+  h2 Tournaments
   .list-group
     each tournaments
       a.list-group-item(href="{{pathFor 'tournaments.show'}}")= name
     +AddTournament
 
+  h2 Players
+  .list-group
+    each players
+      .list-group-item= full_name
+    +AddPlayer
 
 template(name="AddTournament")
   .list-group-item
@@ -14,3 +20,12 @@ template(name="AddTournament")
       .form-group
         input.form-control#tournament_date(type="date")
       button.btn.btn-primary Add tournament
+
+template(name="AddPlayer")
+  .list-group-item
+    form#new_player.form-inline(role="form")
+      .form-group
+        input.form-control#player_first_name(type=text placeholder="first name")
+      .form-group
+        input.form-control#player_last_name(type=text placeholder="last name")
+      button.btn.btn-primary Add player
