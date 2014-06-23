@@ -6,8 +6,13 @@ Router.configure
   routeControllerNameConverter: 'upperCamelCase'
 
 Router.map ->
-  @route 'tournaments.index',
+  @route 'home',
     path: '/'
+    action: ->
+      Router.go('/squads/marlow-wolves-youth')
 
   @route 'tournaments.show',
     path: '/tournaments/:_id'
+
+  @route 'squads.show',
+    path: '/squads/:slug'

@@ -1,0 +1,16 @@
+template(name="SquadsShow")
+  h1=name
+  .list-group
+    each tournaments
+      a.list-group-item(href="{{pathFor 'tournaments.show'}}")= name
+    +AddTournament
+
+
+template(name="AddTournament")
+  .list-group-item
+    form#new_tournament.form-inline(role="form")
+      .form-group
+        input.form-control#tournament_host(type=text placeholder="tournament host")
+      .form-group
+        input.form-control#tournament_date(type="date")
+      button.btn.btn-primary Add tournament

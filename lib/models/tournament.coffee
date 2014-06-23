@@ -1,6 +1,10 @@
 class @Tournament extends Minimongoid
   @_collection: new Meteor.Collection 'tournaments'
 
+  @belongs_to: [
+    name: 'squad'
+  ]
+
   @has_many: [
     name: 'games'
     foreign_key: 'tournament_id'
@@ -10,10 +14,13 @@ class @Tournament extends Minimongoid
   ]
 
   @defaults:
-    name: ''
+    host: ''
     date: ''
 
   validate: ->
-    @error('name', 'Tournament name is required') unless @name
+    @error('host', 'Tournament host is required') unless @host
     @error('date', 'Tournament date is required') unless @date
+
+  name: ->
+    "#{@date} @ #{@host}"
 
